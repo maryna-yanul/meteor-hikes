@@ -1,0 +1,125 @@
+@text-font: 'Open Sans', sans-serif;
+.registration-header {
+  background: url(/images/mountain-3-min.jpeg) center center;
+  min-height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    color: #fff;
+    font-family: @text-font;
+  }
+  small {
+    color: #BDBDBD;
+    font-size: 14px;
+  }
+}
+
+.form-registration {
+  width: 500px;
+  //margin-top: 250px;
+  padding-top: 30px;
+  font-family: @text-font;
+  background-color: #333;
+
+  label {
+    color: #f5f5f5;
+  }
+  .form-input {
+    p {
+      color: #555;
+    }
+    input {
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #757575;
+      border-radius: 0;
+    }
+  }
+  button.registration-btn  {
+    color: #01ff01;
+    background: rgba(0, 0, 0, 0);
+    border: #01ff01 1px solid;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 15px;
+    border-radius: 0;
+    transition: all 0.3s linear;
+    margin-left: 10px;
+    &:hover {
+      color: #fff;
+      background-color: #01ff01;
+    }
+  }
+}
+
+.login-block {
+  font-family: @text-font;
+  background-color: #333;
+  width: 400px;
+  //padding-top: 30px;
+
+  input {
+    border-radius: 0;
+  }
+  .login {
+    margin-top: 15px;
+    font-family: @text-font;
+  }
+  .login-btn button {
+    color: #01ff01;
+    background: rgba(0, 0, 0, 0);
+    border: #01ff01 1px solid;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 15px;
+    border-radius: 0;
+    transition: all 0.3s linear;
+  }
+
+  .login-btn button:hover {
+    color: #fff;
+    background-color: #01ff01;
+  }
+}
+
+.text-about-user {
+  font-family: @text-font;
+  h4 {
+    color: #f5f5f5;
+    padding-left: 15px;
+    padding-bottom: 10px;
+  }
+}
+.error{
+  margin: 15px 0;
+}
+.register-link{
+  line-height: 34px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 1000px) {
+  .login-block {
+    width: 60%;
+  }
+
+  .form-registration {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login-block {
+    width: 80%;
+  }
+
+  .form-registration {
+    width: 85%;
+    .registration-btn button {
+      margin-left: 0;
+    }
+  }
+}
+

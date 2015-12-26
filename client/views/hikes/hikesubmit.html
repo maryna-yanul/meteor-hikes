@@ -1,0 +1,127 @@
+<template name="hikesubmitView">
+    <form>
+        <div class="dropZone button-drop">
+            <i class="fa fa-cloud-upload fa-3x"></i>
+            <h3>Прикріпіть фото у шапку</h3>
+            <p>у іншому випадку буде автоматично добавлена рандомно фотографія</p>
+        </div>
+        <input type="file" name="photo" id="hikePhoto" style="display: none">
+        <div class="container-fluid hike-form">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                            <span class="glyphicon glyphicon-font" aria-hidden="true"></span>
+                            <h4>Назва вашого походу:</h4>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                            <input required="required" id="title" type="text" name="nameHike" maxlength="30"
+                                   class="form-control" placeholder="Прогулка Говерлою">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4  col-sm-5 col-xs-12">
+                            <img src="/images/icon-date.jpg">
+                            <h4>Дата початку походу:</h4>
+                            <script>
+                                var picker = new Pikaday({
+                                    field: document.getElementById('datepicker'),
+                                    format: 'D MMM YYYY',
+                                    onSelect: function () {
+                                    }
+                                });
+                            </script>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                            <input required="required" readonly="readonly" id="datepicker" type="text" name="dateHike"
+                                   class="form-control" placeholder="14 лютого">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4  col-sm-5 col-xs-12">
+                            <img src="/images/icon-date.jpg">
+                            <h4>Дата закінчення походу:</h4>
+                            <script>
+                                var picker = new Pikaday({
+                                    field: document.getElementById('datepicker3'),
+                                    format: 'D MMM YYYY',
+                                    onSelect: function () {
+                                    }
+                                });
+                            </script>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                            <input required="required" readonly="readonly" id="datepicker3" type="text" name="dateHikeEnd"
+                                   class="form-control" placeholder="20 лютого">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                            <img src="/images/icon-grup.jpg">
+                            <h4>Кількість учасників:</h4>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                            <input required="required" type="number" min="2" max="250" name="partnerHike"
+                                   class="form-control" placeholder="більше одного ;)">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                            <img src="/images/time.jpg">
+                            <h4>Час зустрічі:</h4>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                            <input required="required" type="time" name="timeHike" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4  col-sm-5 col-xs-12">
+                            <img src="/images/icon-way.jpg">
+                            <h4>Відстань(км):</h4>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                            <input required="required" type="number" min="1" max="11000" step="any" name="distanceHike"
+                                   class="form-control" placeholder="150">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row line"></div>
+        </div>
+        <div class="container set-hike">
+            {{>map}}
+
+        </div>
+        <div class="container description">
+            <div class="row">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                <h3>Опис, поради, інформація про похід:</h3>
+            </div>
+            <div class="row">
+                <textarea required="required" id="edit" name="contentHike"></textarea>
+            </div>
+            <div class="row"></div>
+        </div>
+        <div class="container">
+            <div class="row line"></div>
+        </div>
+        <div class="container preview-content">
+            <div class="row">
+                <p>*Всі поля обов'язкові до заповнення</p>
+            </div>
+            <div class="row button-hike-preview">
+                <button type="submit" value="Submit">Попередній перегляд та публікація</button>
+            </div>
+        </div>
+    </form>
+    <footer class="footer-content container-fluid">
+        <div class="row">
+            <h6>Design by <a href="http://kaminechny.com/">Kaminechny Roman</a><br>Web-development by <a
+                    href="https://ua.linkedin.com/in/yanul" target="_blank
+            ">Maryna Yanul</a></h6>
+        </div>
+    </footer>
+</template>

@@ -1,0 +1,91 @@
+<template name="hikesfilterView">
+      <div class="container-fluid">
+         <form id="filter">
+         <div class="row filter-hader">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 filter-block">
+               <ul>
+                  <li><i class="fa fa-calendar"></i></li>
+                  <li>
+                     <h5>Дати походу</h5>
+                  </li>
+               </ul>
+               <div class="filter-body dateFilter">
+                  
+                  <div class="block-body">
+                     <script>
+                                var picker = new Pikaday({
+                                    field: document.getElementById('datepicker0'),
+                                    format: 'D MMM YYYY',
+                                    onSelect: function () {
+                                    }
+                                });
+                     </script>
+                     <input class="filter-field" required="required" readonly="readonly" id="datepicker0" type="text" name="dateStart">
+                  </div>
+                  <div class="block-body display-resp">
+                     <script>
+                                var picker = new Pikaday({
+                                    field: document.getElementById('datepicker1'),
+                                    format: 'D MMM YYYY',
+                                    onSelect: function () {
+                                    }
+                                });
+                     </script>
+                     <input class="filter-field" required="required" readonly="readonly" id="datepicker1" type="text" name="dateEnd">
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 filter-block">
+               <ul>
+                  <li><i class="fa fa-road"></i></li>
+                  <li>
+                     <h5>Відстань км</h5>
+                  </li>
+               </ul>
+               <div class="filter-body distance">
+                  <div class="block-body ">
+                    Від <input class="filter-field" type="number" name="distanceStart" min="0" max="1000">
+                  </div>
+                  <div class="block-body">
+                     До <input class="filter-field" type="number" name="distanceEnd" min="1" max="1000">
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 filter-block">
+               <ul>
+                  <li><i class="fa fa-users"></i></li>
+                  <li>
+                     <h5>Кількість учасників</h5>
+                  </li>
+               </ul>
+               <div class="filter-body partner">
+                  <div class="block-body">
+                     Від <input class="filter-field" type="number" name="partnerStart" min="0" max="1000">
+                  </div>
+                  <div class="block-body">
+                     До <input class="filter-field" type="number" name="partnerEnd" min="1" max="1000">
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 filter-block">
+               <ul>
+                  <li><i class="fa fa-search"></i></li>
+                  <li>
+                     <h5>Пошук за назвою</h5>
+                  </li>
+               </ul>
+               <div class="filter-body search">
+                  <div class="block-body">
+                     <input type="search" name="search" id='search'><i class="fa fa-search"></i>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+         <div class="row">
+     <input class="reset pull-right" type="reset" value="reset">
+</div>
+         </form>
+      </div>
+</template>

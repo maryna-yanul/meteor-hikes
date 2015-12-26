@@ -1,0 +1,166 @@
+<template name="userprofileView">
+    <div class="container-fluid user-profile-bg">
+        <i class="fa fa-cloud-upload fa-3x"></i>
+    </div>
+
+    <div class="container-fluid profile-line-container">
+        <div class="user-details row">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                        <img src="{{userGravatar}}" alt="user" class="img-circle">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 form-about-user">
+                        {{#if editProfile}}
+                            <form>
+
+                                <h2>{{profile.username}}</h2>
+
+                                <p>Років: {{profile.age}}</p>
+
+                                <input type="number" name="age" value="{{profile.age}}">
+                                <p>Країна проживання: {{profile.country}}</p>
+                                <input type="text" name="country" value="{{profile.country}}">
+                                <p>Телефон: {{profile.phone}}</p>
+                                <input type="tel" name="phone" value="{{profile.phone}}">
+                                <!--<div class="line"></div>-->
+                            </form>
+                        {{else}}
+                            <h2>{{profile.username}}</h2>
+                            <p>Років: {{profile.age}}</p>
+                            <p>Країна проживання: {{profile.country}}</p>
+                            <p>Телефон: {{profile.phone}}</p>
+                        {{/if}}
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <button class="button-hike-new pull-right">Створити похід</button>
+
+                        {{#if curentProfile}}
+                            {{#if editProfile}}
+                                <button class="button-settings-save pull-right">Зберегти</button>
+                            {{else}}
+                                <button class="button-settings-profile pull-right">Налаштування</button>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid profile-about">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <h3>Про мене:</h3>
+
+                    {{#if editProfile}}
+                        <textarea required="required" id="edit" name="description"
+                                  value="{{profile.description}}"></textarea>
+                    {{else}}
+                        {{#if profile.description}}
+                            <p>{{{profile.description}}}</p>
+                        {{else}}
+                            <p>Тут буде текст про вас</p>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container marcher">
+        {{#if userHikes}}
+            <div class="row">
+                <h3>Організатор походу:</h3>
+            </div>
+            <div class="row">
+                {{#each userHikes}}
+                    <div class="col-lg-6 col-md-6 col-sm-6 hike">
+                        <div class="thumbnail">
+                            <div class="hike-details-bg"><h3>{{nameHike}}</h3></div>
+                            <div class="caption date-user-hike">
+                                <div class="row details-hike">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-calendar"></i>
+                                        <p>{{moment dateHike}} -
+                                            {{moment dateHikeEnd}}</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-road"></i>
+                                        <p>{{distanceHike}}км</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-users"></i>
+                                        <p>{{partnerHike}}</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-clock-o"></i>
+                                        <p>{{timeHike}}</p>
+                                    </div>
+                                </div>
+                                <div class="about-hike-details">
+                                    <p>{{{contentHike}}}</p>
+                                </div>
+                                <div>
+                                    <a href="{{pathFor 'hikepreviewView'}}" class="btn btn-default" role="button">Переглянути</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+
+            </div>
+        {{/if}}
+        {{#if userParticipationHikes}}
+            <div class="row">
+                <h3>Учасник походу:</h3>
+            </div>
+            <div class="row">
+                {{#each userParticipationHikes}}
+                    <div class="col-lg-6 col-md-6 col-sm-6 hike">
+                        <div class="thumbnail">
+                            <div class="hike-details-bg"><h3>{{nameHike}}</h3></div>
+                            <div class="caption date-user-hike">
+                                <div class="row details-hike">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-calendar"></i>
+                                        <p>{{moment dateHike}} -
+                                            {{moment dateHikeEnd}}</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-road"></i>
+                                        <p>{{distanceHike}}км</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-users"></i>
+                                        <p>{{partnerHike}}</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-clock-o"></i>
+                                        <p>{{timeHike}}</p>
+                                    </div>
+                                </div>
+                                <div class="about-hike-details">
+                                    <p>{{{contentHike}}}</p>
+                                </div>
+                                <div>
+                                    <a href="{{pathFor 'hikepreviewView'}}" class="btn btn-default" role="button">Переглянути</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+    <footer class="footer-content container-fluid">
+        <div class="row">
+            <h6>Design by <a href="http://kaminechny.com/">Kaminechny Roman</a><br>Web-development by <a
+                    href="https://ua.linkedin.com/in/yanul" target="_blank
+            ">Maryna Yanul</a></h6>
+        </div>
+    </footer>
+</template>

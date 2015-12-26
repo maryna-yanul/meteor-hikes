@@ -1,0 +1,30 @@
+<template name="userloginView">
+	<div class="container-fluid registration-header">
+	<!--<div class="container">
+		<h1>Вхід</h1>
+	</div>-->
+	<div class="container login-block">
+        <h1>Вхід</h1>
+		<form>
+			<div class="row login">
+				<div class="  col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<input required type="email" class="form-control" name="loginEmail" placeholder="Email">
+				</div>
+			</div>
+			<div class="row login">
+                <div class="  col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<input required type="password" class="form-control" name="loginPassword" placeholder="Password">
+					</div>
+			</div>
+			<div class="row login login-btn">
+                <div class="  col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<button type="submit" value="Submit" class="btn btn-default btn-success pull-right">Увійти</button>
+                    <a href="{{pathFor 'userregistrationView'}}" class="btn-link pull-right register-link">Реєстрація</a>
+
+                </div>
+			</div>
+            <div class="error text-danger"></div>
+		</form>
+	</div>
+</div>
+</template>

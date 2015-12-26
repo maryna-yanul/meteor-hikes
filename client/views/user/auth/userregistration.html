@@ -1,0 +1,46 @@
+<template name="userregistrationView">
+    <div class="container-fluid registration-header">
+        <div class="container form-registration">
+            <form class="form-horizontal register form-input">
+                <div class="form-group ">
+                    <label for="nameUser" class="col-lg-5 col-md-5 col-sm-5 col-xs-12 control-label">Ім'я
+                        користувача</label>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <input required type="text" class="form-control" name="nameUser" placeholder="Тарас Шевченко">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-lg-5 col-md-5 col-sm-5 col-xs-12  control-label">Адреса електронної
+                        пошти</label>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <input required  type="email" class="form-control" name="email" placeholder="Email" value="{{email}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Password0" class="col-lg-5 col-md-5 col-sm-5 col-xs-12 control-label">Пароль</label>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <input required type="password" maxlength="25" class="form-control" id="Password" name="password0"
+                               placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Password1" class="col-lg-5 col-md-5 col-sm-5 col-xs-12 control-label">Повторіть
+                        пароль</label>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <input required type="password" maxlength="25" class="form-control" id="Password" name="password1"
+                               placeholder="Repeat Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-12">
+                        <button type="submit" value="Submit" class="btn btn-default pull-right registration-btn">
+                            Зареєструватися
+                        </button>
+                        <a href="{{pathFor 'userloginView'}}" class="btn-link pull-right register-link">Вхід</a>
+                    </div>
+                </div>
+                <div class="error text-danger"></div>
+            </form>
+        </div>
+    </div>
+</template>

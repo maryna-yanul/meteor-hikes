@@ -1,0 +1,105 @@
+<template name="headerView">
+    {{#if currentUser}}
+        <div class="navbar navbar-default" id="jasny-top">
+            <button type="button" class="navbar-toggle" style="display: block" data-toggle="offcanvas"
+                    data-target="#myNavmenu" data-canvas="body">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    {{/if}}
+    <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+        <!--<a class="navmenu-brand" href="#">Brand</a>
+        <ul class="nav navmenu-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>-->
+        <div class="navigation-menu">
+            <div class="col-lg-12 col-md-12 menu-hamburger">
+                <div class="row top-meny">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 button-menu">
+                        <button class="exit">Вийти</button>
+                        <button class="pull-right submit-hike">Створити похід</button>
+
+                    </div>
+                    <!--<div class="col-lg-2 col-md-2">
+                       <a href="#"><i class="fa fa-facebook fa-1x"></i></a>
+                       <a href="#"><i class="fa fa-vk fa-1x"></i></a>
+                       <a href="#"><i class="fa fa-google-plus fa-1x"></i></a>
+                    </div>-->
+
+                </div>
+                <div class="row menu-block-border">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="row about-user">
+                            <div class="col-lg-offset-1 col-md-offset-1 col-lg-4 col-md-4 col-sm-offset-1 col-xs-offset-1 col-sm-6 col-xs-11">
+                                <a href="{{pathFor 'userprofileView'}}"><img src="{{userGravatar}}" class="img-circle menu-exit"></a>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                                <a href="{{pathFor 'userprofileView'}}" class="menu-exit"><h4>{{profile.username}}</h4></a>
+                                <a href="{{pathFor 'userprofileView'}}" class="profile-link menu-exit">
+                                    <p>Профаіл</p>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                                <div class="block-user-about">
+                                    <i class="fa fa-chevron-down"></i>
+                                    <h4>{{myHikes}}</h4>
+                                    <p>походів</p>
+                                </div>
+                                <div class="block-user-about">
+                                    <i class="fa fa-star"></i>
+                                    <h4>0</h4>
+                                    <p>рейтинг</p>
+                                </div>
+                                <div class="block-user-about">
+                                    <i class="fa fa-chevron-down"></i>
+                                    <h4>0</h4>
+                                    <p>км пройшов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="row menu-nav">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 hike-menu">
+                                <a href="{{pathFor 'hikeslistView'}}" class="menu-exit"><h4>Походи</h4></a>
+                                <p>{{allHikes}} активних</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 hike-menu-img">
+                                <div class="hike-menu-icon"><i class="fa fa-map-marker"></i></div>
+                                <img src="/images/menu-img1.jpg">
+                            </div>
+                        </div>
+
+                        <div class="row menu-nav">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 hike-menu">
+                                <a href="{{pathFor 'guidesView'}}" class="menu-exit"><h4>Провідники</h4></a>
+                                <p>9 провідників</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 hike-menu-img">
+                                <div class="hike-menu-icon"><i class="fa fa-user"></i></div>
+                                <img src="/images/menu-img2.jpg">
+                            </div>
+                        </div>
+
+                        <div class="row menu-nav">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 hike-menu">
+                                <a href="#"><h4>Магазин</h4></a>
+                                <p>0 товарів</p>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 hike-menu-img">
+                                <div class="hike-menu-icon"><i class="fa fa-briefcase"></i></div>
+                                <img src="/images/menu-img3.jpg">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <a href="{{pathFor 'home'}}" id="logo"><img src="/images/logo.svg"></a>
+</template>

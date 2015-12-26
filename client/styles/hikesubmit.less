@@ -1,0 +1,127 @@
+@text-font:'Open Sans', sans-serif;
+
+.dropZone {    
+    font-family: @text-font;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;       
+    background-image: url(/images/mountain-2-min.jpeg);
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.button-drop{
+  i{
+    color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    border: 4px dotted;
+    padding: 30px 50px;
+    width: 170px;
+    display: block;
+    margin: 0 auto;
+    &:hover, &:active, &:focus{
+      transition: all 0.4s linear;
+      color: #01ff01;
+    }
+  }
+}
+.hike-form{
+    background-color: #616161;
+    font-family: @text-font;
+    color: #f5f5f5;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: -10px;
+    input{
+        border-radius: 0;
+    }
+    img{
+        padding-top: 5px;
+        float: left;
+        width: 30px;
+        margin-right: 5px;
+    }
+    span{
+        float: left;
+        color: #55b716;
+        padding-top: 6px;
+        margin-right: 9px;
+        margin-left: 5px;
+        font-size: 19px;
+    }
+}
+
+.set-hike{
+    span.glyphicon.glyphicon-map-marker{
+        float: left;
+        padding-top: 20px;
+        font-size: 20px;
+        margin-right: 5px;
+        color: #616161;
+    }
+    h3{
+        font-family: @text-font;
+        color: #55b716;
+    }
+}
+.description{
+    span{
+        float: left;
+        padding-top: 18px;
+        font-size: 20px;
+        margin-right: 5px;
+        color: #616161;
+    }
+    h3{
+        font-family: @text-font;
+        color: #55b716;
+        margin-bottom: 30px;
+    }
+}
+.preview-content{
+    p{
+        text-align: center;
+        color: #616161;
+        font-family: @text-font;
+    }
+}
+.button-hike-preview{
+    margin-bottom: 50px;
+    button, button:focus{
+        margin: 0 auto;
+        background: none;
+        border: #01ff01 1px solid;
+        display: block;
+        color: #01FF01;
+        padding: 10px 30px;
+        transition: all 0.3s linear;
+        margin-top: 15px;
+    }
+    button > a {
+        color: #01ff01;
+        text-decoration: none;
+        font-weight: 300;
+    }
+    button:hover, a:hover{
+        text-decoration: none;
+        color: #fff;
+        background-color: #01ff01;
+        transition: all 0.7s;
+    }
+}
+.fr-toolbar{
+    border-top: 5px solid #616161;
+}
+.fr-element{
+    min-height: 200px;
+}
+#map{
+  height: 500px;
+}
+
+.position-point{
+  margin: 15px 0;
+}

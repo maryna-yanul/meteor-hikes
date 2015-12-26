@@ -1,0 +1,123 @@
+<template name="home">
+   <header class="header-content">
+      <div class="container-fluid">
+      <div class="row parallax-window">         
+
+            <div class="text">
+            <h1><span class="high-letters">mountain hikes</span> - сервіс пошуку друзів <br>для спільного походу в гори</h1>
+            <h3>Ми нічого не продаєм<br>Ми втілюєм у життя ваші мрії!</h3>
+         </div>
+         <div class="button-create">
+            <a href="{{pathFor 'hikesubmitView'}}"><button>створити похід</button></a>
+            <a href="{{pathFor 'hikeslistView'}}"><h4>всі походи</h4></a>
+         <p>Короткий тур</p>
+      </div>
+         <div class="menu-down">
+            <a class="js--scroll-down" href="#section1">
+               <img src="images/menu_down.png" alt="menu-down">
+            </a>
+         </div>
+      </div>
+      </div>
+   </header>
+   <div class="clearfix"></div>
+   
+   <section id="section1">
+      <div class="container-fluid">
+   <div class="target-content row">
+      <div class="col-lg-4 col-md-12">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+         <img src="/images/icon3.svg">
+         </div>
+         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+         <h4>Проклади маршрут</h4>
+         <p>Щоб піти у цікавий похід, потрібно скласти продуманий, безпечний, насичений краєвидами маршрут.</p>
+         <p>Наша інтерактивна карта маршрутів допоможе вам у цьому</p>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 target-img">
+         <img src="/images/icon1.svg">
+      </div>
+         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 target-text">
+         <h4>Зберемо друзів</h4>
+         <p>Склавши класний та насичений маршрут ви зацікавите якомога більшу кількість людей для спільного походу.</p>
+         <p>Разом з Mountain Trip ви найдете тих з ким буде класно провести час у горах</p>
+      </div>
+   </div>
+   <div class="col-lg-4 col-md-12">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+         <img src="/images/icon2.svg">
+      </div>
+         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+         <h4>Ідемо у похід</h4>
+         <p>За мінімальну кількість дій та часу ми максимально швидко зібрали команду цікавих та енергійних людей.</p>
+         <p>Йдем у похід та получаємо велику купу позитивних емоцій та гарних фотографій!</p>
+      </div>
+   </div>
+   </div>
+   </div>
+</section>
+   <div class="mountain-block-center container-fluid">
+      <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+         <h2>Знімаємо величезну кількість<br>крутих фотографій та ділимось ними<br>з друзями</h2>
+      </div>
+   </div>
+   </div>
+    <div class="clearfix"></div>
+
+<div class="advantages container-fluid">
+   <div class="row">
+      <div class="col-lg-2 col-md-2 col-lg-offset-1 position-text">
+         <h4>Економія часу</h4>
+         <p>Короткий текст опис цієї переваги довжиною у декілька не надто довгих рядків сірого кольору або кольору який найраще підійде до даного блоку сайту</p>
+      </div>
+      <div class="col-lg-3 col-md-3 position-img">
+         <img src="/images/advantages1.png">
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-lg-3 col-md-3 col-lg-offset-5 position-img2">
+         <img src="/images/advantages2.png">
+      </div>
+      <div class="col-lg-2 col-md-2 position-text">
+         <h4>Великий вибір маршрутів</h4>
+         <p>Короткий текст опис цієї переваги довжиною у декілька не надто довгих рядків сірого кольору або кольору який найраще підійде до даного блоку сайту</p>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-lg-2 col-md-2 col-lg-offset-1 position-text">
+         <h4>Нові знайомства</h4>
+         <p>Короткий текст опис цієї переваги довжиною у декілька не надто довгих рядків сірого кольору або кольору який найраще підійде до даного блоку сайту</p>
+      </div>
+      <div class="col-lg-4 col-md-4 position-img">
+         <img src="/images/advantages3.png">
+      </div>
+   </div>
+</div>
+ <div class="clearfix"></div>
+ <div class="rhombus"><img src="/images/rhombus.png"></div>
+ <div class="clearfix"></div>
+
+   <footer class="footer-block parallax-footer container-fluid">
+      <div class="row">
+         <h1>Не втрачай час!</h1>
+         <h4>Створи свій крутий похід або приєднайся до існуючих!</h4>
+         <div class="button-create"><a href="{{pathFor 'hikesubmitView'}}"><button>створити похід</button></a></div>
+         <a href="{{pathFor 'hikeslistView'}}"><h4>всі походи</h4></a>
+         <div class="social">
+            <a href="#"><img src="/images/social_fb.svg"></a>
+            <a href="#"><img src="/images/social_vk.svg"></a>
+            <a href="#"><img src="/images/social_g.svg"></a>
+         </div>
+         <div class="footer-content copyright container-fluid">
+      <div class="row">
+         <h6>Design by <a href="http://kaminechny.com/">Kaminechny Roman</a><br>Web-development by <a href="https://ua.linkedin.com/in/yanul" target="_blank
+            ">Maryna Yanul</a></h6>
+      </div>
+   </div>
+      </div>
+   </footer>
+    <div class="clearfix"></div>
+</template>

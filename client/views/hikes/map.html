@@ -1,0 +1,106 @@
+<template name="map">
+    <div class="row">
+        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> </span>
+        <h3>Побудуйте маршрут на карті: (&asymp;{{meters}}км)
+
+            <small class="text-danger text-right"><a href="#" id="removeMarker">Видалити всі маркери</a></small>
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <style>
+                .controls {
+                    margin-top: 10px;
+                    border: 1px solid transparent;
+                    border-radius: 2px 0 0 2px;
+                    box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    height: 32px;
+                    outline: none;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                }
+
+                #pac-input {
+                    background-color: #fff;
+                    font-family: Roboto;
+                    font-size: 15px;
+                    font-weight: 300;
+                    margin-left: 12px;
+                    padding: 0 11px 0 13px;
+                    text-overflow: ellipsis;
+                    width: 300px;
+                }
+
+                #pac-input:focus {
+                    border-color: #4d90fe;
+                }
+
+                .pac-container {
+                    font-family: Roboto;
+                }
+
+                #type-selector {
+                    color: #fff;
+                    background-color: #4d90fe;
+                    padding: 5px 11px 0px 11px;
+                }
+
+                #type-selector label {
+                    font-family: Roboto;
+                    font-size: 13px;
+                    font-weight: 300;
+                }
+
+                #right-panel {
+                    float: right;
+                    /*width: 34%;*/
+                    height: 100%;
+                }
+
+                #right-panel {
+                    font-family: 'Roboto', 'sans-serif';
+                    line-height: 30px;
+                    padding-left: 10px;
+                }
+
+                #right-panel select, #right-panel input {
+                    font-size: 15px;
+                }
+
+                #right-panel select {
+                    width: 100%;
+                }
+
+                #right-panel i {
+                    font-size: 12px;
+                }
+
+                .panel {
+                    height: 100%;
+                    overflow: auto;
+                }
+            </style>
+
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <div id="map"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr7dIU_2qrkXcd9eTGgZTVjFPTpxb0E2A&libraries=places,geometry&callback=initAutocomplete"
+                    async defer></script>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-lg-12">
+            {{#each positions}}
+
+            <div class="form-group position-point col-lg-2">
+                <div class="input-group">
+                    <span class="input-group-addon bg-danger" data-label="{{label}}" id="remove-point" style="cursor: pointer"><i class="glyphicon glyphicon-remove text-danger" ></i></span>
+                    <input maxlength="1" type="text" class="form-control point-name" required placeholder="одна літера" value="{{label}}">
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</template>

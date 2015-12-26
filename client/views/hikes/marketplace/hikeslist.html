@@ -1,0 +1,60 @@
+<template name="hikeslistView">
+    <div class="container-fluid hike-list-heder">
+        <div class="container">
+            <div class="row">
+                <h1>Походи {{#if currentUser}} <button class="pull-right submit-hike">Створити похід</button>{{/if}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container filter-container">
+        {{> hikesfilterView}}
+    </div>
+    <div class="container marcher">
+        <div class="row">
+            {{#each hikes}}
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 hike">
+                        <div class="thumbnail">
+                            <div class="hike-details-bg" style="background-image: url({{defaultPic image}})"><h3>{{nameHike}}</h3></div>
+                            <div class="caption date-user-hike">
+                                <div class="row details-hike">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-calendar"></i>
+                                        <p>{{moment dateHike}} -
+                                        {{moment dateHikeEnd}}</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-road"></i>
+                                        <p>{{distanceHike}}км</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-users"></i>
+                                        <p>{{partnerHike}}</p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa fa-clock-o"></i>
+                                        <p>{{timeHike}}</p>
+                                    </div>
+                                </div>
+                                <div class="about-hike-details">
+                                    <p>{{{contentHike}}}</p>
+                                </div>
+                                <div>
+                                    <a href="{{pathFor 'hikepreviewView'}}" class="btn btn-default" role="button">Переглянути</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="marketplace-footer">
+    </div>
+    <div class="container-fluid">
+        <footer class="footer-content row">
+            <h6>Design by <a href="http://kaminechny.com/">Kaminechny Roman</a><br>Web-development by <a
+                    href="https://ua.linkedin.com/in/yanul" target="_blank
+">Maryna Yanul</a></h6>
+        </footer>
+    </div>
+</template>
